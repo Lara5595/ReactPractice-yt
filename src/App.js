@@ -1,27 +1,20 @@
 import './App.css';
+import { User } from "./User"
+import Planets from './Planets';
+// import {Planets} from './Planets'
 
 function App() {
-const users = [
-  {name: "David", age: 27},
-  {name: "Lessly", age: 24},
-  {name: "Luca", age: 0},
-
-];
-
-return (
-  <div className='App'>
-    {users.map((user, key) => {
-      return (
-        <div>
-          {user.name} {user.age}
-          </div>
-      );
-    })}
-  </div>
-);
-
-} // end of App
-
+    const age = 0;
+    // we are creating a var to use inside the onclick
+    const increaseAge = () => {
+      age = age + 1;
+      console.log(age);
+    }
+    <div className='App'>
+      {age}
+      <button onClick={increaseAge}>Increase Age</button>
+    </div>
+  }
 
 
 
@@ -37,8 +30,86 @@ export default App;
 
 
 
+///////////////////////////////// Using a component with .map ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// function App() {
 
 
+// function App() {
+//   const users = [
+//     {name: "David", age: 27},
+//     {name: "Lessly", age: 24},
+//     {name: "Luca", age: 0},
+  
+//   ];
+  
+//   return (
+//     <div className='App'>
+//       {users.map((user, key) => {
+//         return <User name= {user.name} age ={user.age}/>
+//       })}
+//     </div>
+//   );
+//     }
+  
+  
+//   const User = (props) => {
+//     return (
+//       <div>
+//         {props.name} Age: {props.age}
+//       </div>
+//     )
+//   }
+
+
+
+
+// This example uses planets.js 
+// function App() {
+
+
+//   return (
+//     <div className='App'>
+//       {Planets.map((planet, key) => {
+//       if (planet.isGasPlanet) return <h1> {planet.name} is a Gas Planet</h1>
+//       if (!planet.isGasPlanet) return <h1> {planet.name} is not a Gas Planet</h1>
+//       })}
+//     </div>
+//   )
+
+
+
+
+///////////////////////////////// End of Using a component with .map ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// function App() {
+
+
+
+///////////////////////////////// Using .map with objects ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// function App() {
+
+
+// function App() {
+//   const users = [
+//     {name: "David", age: 27},
+//     {name: "Lessly", age: 24},
+//     {name: "Luca", age: 0},
+  
+//   ];
+  
+//   return (
+//     <div className='App'>
+//       {users.map((user, key) => {
+//         return (
+//           <div>
+//             {user.name}, Age:{user.age}
+//             </div>
+//         );
+//       })}
+//     </div>
+//   );
+  
+//   } // end of App
+
+
+
+///////////////////////////////// End of .map with objects ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// function App() {
 
 
 ///////////////////////////////// How to use a array and map to loop over ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// function App() {
