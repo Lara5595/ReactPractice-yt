@@ -1,26 +1,84 @@
 import './App.css';
-import { User } from "./User"
-import Planets from './Planets';
+
+// react library
+import { useState } from 'react';
+
+
+// import { User } from "./User"
+// import Planets from './Planets';
 // import {Planets} from './Planets'
 
 function App() {
-    const age = 0;
-    // we are creating a var to use inside the onclick
-    const increaseAge = () => {
-      age = age + 1;
-      console.log(age);
-    }
+  const [showText, setShowText] = useState(true)
+  const [textColor, setTextColor] = useState("black")
+
+  return (
     <div className='App'>
-      {age}
-      <button onClick={increaseAge}>Increase Age</button>
+      {/* We are doing a inline function */}
+      <button
+       onClick={() => {
+        setShowText(!showText)
+       }}>Show/Hide</button>
+      {/* && is then */}
+      {showText === true && <h1>Hi my name is David</h1>}
+       <br>
+      </br>
+      <div>
+       <h1 style={{color: textColor}}>Change my color by click button</h1>
+       <button onClick={() => {
+        setTextColor(textColor === "black" ? "red" : "black")
+       }}>Click me for color</button>
+      </div>
+
     </div>
-  }
+
+  )
+
+}
 
 
 
 
 // We need this so we can use it on other pages
 export default App;
+
+
+// at 1:28:32
+
+
+
+
+///////////////////////////////// Using Events ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// function App() {
+
+
+// function App() {
+//   // this is part of the useState library  age is what we are naming our var
+//     const [age, setAge] = useState(0)
+//   // we are creating a var to use inside the onclick
+//     const increaseAge = () => {
+//       setAge(age + 1)
+//     }
+
+//     // this is to show the input value
+//     const [inputValue, setInputValue] = useState("");
+
+//     const handleInputChange = (event) => {
+//       setInputValue(event.target.value);
+//       // console.log(event.target.value);
+//     }
+
+//     return (
+//     <div className='App'>
+//       {age}
+//       <button onClick={increaseAge}>Increase Age</button><br></br>
+//       <input type="text" onChange={handleInputChange}/>
+//       {inputValue}
+//     </div>
+//     )
+//   }
+
+
+//////////////////////////////////// END OF Using a component with .map ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// function App() {
 
 
 
