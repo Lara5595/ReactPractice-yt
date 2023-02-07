@@ -12,12 +12,24 @@ function App() {
 
   const [count, setCount] = useState(0);
 
+  const increaseCount = () => {
+    setCount(count + 1)
+  }
+
+  const decreaseCount = () => {
+    setCount(count - 1)
+  }
+
+  const setToZero = () => {
+    setCount(0)
+  }
+
   return (
     <div className='App'>
-      <button>Increase</button>
-      <button>Decrease</button>
-      <button>Set to Zero</button>
-
+      <button onClick={increaseCount}>Increase</button>
+      <button onClick={decreaseCount}>Decrease</button>
+      <button onClick={setToZero}>Set to Zero</button>
+      {count}
       </div>
   )
 
@@ -93,6 +105,39 @@ export default App;
 //   )
 
 // }
+
+
+
+
+// setting numbers increase decrese and zero
+
+// function App() {
+
+//   const [count, setCount] = useState(0);
+
+//   const increaseCount = () => {
+//     setCount(count + 1)
+//   }
+
+//   const decreaseCount = () => {
+//     setCount(count - 1)
+//   }
+
+//   const setToZero = () => {
+//     setCount(0)
+//   }
+
+//   return (
+//     <div className='App'>
+//       <button onClick={increaseCount}>Increase</button>
+//       <button onClick={decreaseCount}>Decrease</button>
+//       <button onClick={setToZero}>Set to Zero</button>
+//       {count}
+//       </div>
+//   )
+
+// }
+
 
 
 //////////////////////////////////// END OF Using a component with .map ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// function App() {
