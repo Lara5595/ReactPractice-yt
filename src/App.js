@@ -9,29 +9,16 @@ import { useState } from 'react';
 // import {Planets} from './Planets'
 
 function App() {
-  const [showText, setShowText] = useState(true)
-  const [textColor, setTextColor] = useState("black")
+
+  const [count, setCount] = useState(0);
 
   return (
     <div className='App'>
-      {/* We are doing a inline function */}
-      <button
-       onClick={() => {
-        setShowText(!showText)
-       }}>Show/Hide</button>
-      {/* && is then */}
-      {showText === true && <h1>Hi my name is David</h1>}
-       <br>
-      </br>
-      <div>
-       <h1 style={{color: textColor}}>Change my color by click button</h1>
-       <button onClick={() => {
-        setTextColor(textColor === "black" ? "red" : "black")
-       }}>Click me for color</button>
+      <button>Increase</button>
+      <button>Decrease</button>
+      <button>Set to Zero</button>
+
       </div>
-
-    </div>
-
   )
 
 }
@@ -43,7 +30,6 @@ function App() {
 export default App;
 
 
-// at 1:28:32
 
 
 
@@ -76,6 +62,37 @@ export default App;
 //     </div>
 //     )
 //   }
+
+
+/////////////  hiding text and changing the color
+
+// function App() {
+//   const [showText, setShowText] = useState(true)
+//   const [textColor, setTextColor] = useState("black")
+
+//   return (
+//     <div className='App'>
+//       {/* We are doing a inline function */}
+//       <button
+//        onClick={() => {
+//         setShowText(!showText)
+//        }}>Show/Hide</button>
+//       {/* && is then */}
+//       {showText === true && <h1>Hi my name is David</h1>}
+//        <br>
+//       </br>
+//       <div>
+//        <h1 style={{color: textColor}}>Change my color by click button</h1>
+//        <button onClick={() => {
+//         setTextColor(textColor === "black" ? "red" : "black")
+//        }}>Click me for color</button>
+//       </div>
+
+//     </div>
+
+//   )
+
+// }
 
 
 //////////////////////////////////// END OF Using a component with .map ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// function App() {
