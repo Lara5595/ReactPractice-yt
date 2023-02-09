@@ -1,29 +1,32 @@
 import './App.css';
-import { Text } from './Text';
+import Axios  from 'axios';
+// import { Text } from './Text';
 
 // react library
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
 // import { User } from "./User"
 // import Planets from './Planets';
 // import {Planets} from './Planets'
 
+
+
 function App() {
+  fetch("https://catfact.ninja/fact").then((res) => res.json())
+  .then((data) => {
+    console.log(data);
+  })
 
- const [showText, setShowText] = useState(false);
-
- return (
+return (
   <div className='App'>
-<button onClick={() => {
-  setShowText(!showText)
-}}>
-  Show Text
-</button>
-
-{showText && <Text/>}
+    <button> Generate Cat Fact</button>
+    <p> </p>
     </div>
- )
+
+)
+
+
 
 }
 
@@ -34,6 +37,43 @@ function App() {
 export default App;
 
 
+
+
+
+
+
+
+///////////////////////////////// Using events  with a js component with a event ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// function App() {
+
+
+// function App() {
+
+//   const [showText, setShowText] = useState(false);
+ 
+//   return (
+//    <div className='App'>
+//  <button onClick={() => {
+//    setShowText(!showText)
+//  }}>
+//    Show Text
+//  </button>
+ 
+//  {showText && <Text/>}
+//      </div>
+//   )
+ 
+//  }
+ 
+ 
+
+
+
+
+
+
+
+
+///////////////////////////////// End Using events  with a js component with a event ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// function App() {
 
 
 

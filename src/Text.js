@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 export const Text = () => {
     const [text, setText] = useState("")
 
+
+/// Learning how to use the useEffect
+
     useEffect(() => {
         console.log("Component Mounted");
 
@@ -24,4 +27,3 @@ export const Text = () => {
 }
 
 
-// stayed on 2:18:45~
