@@ -1,10 +1,10 @@
 import './App.css';
-import Axios from "axios"
+// import Axios from "axios";
 // import { Text } from './Text';
 
 // react library
-import { useState, useEffect} from 'react';
-
+// import { useEffect, useState} from 'react';
+import { NameApi } from './NameApi';
 
 // import { User } from "./User"
 // import Planets from './Planets';
@@ -14,32 +14,10 @@ import { useState, useEffect} from 'react';
 
 function App() {
 
-  // this is how we get the api in js but there is another way and its with axios
-  // fetch("https://catfact.ninja/fact").then((res) => res.json())
-  // .then((data) => {
-  //   console.log(data);
-  // })
+  return (
+    <NameApi />
 
-  const [catFact, setCatFact] = useState("")
-
-// the useEffect helps it not be a infinite loop of facts
-  useEffect(() => {
-  // Axios Api fetch
-  Axios.get("https://catfact.ninja/fact").then((res) => {
-    // console.log(res.data);
-    setCatFact(res.data.fact)
-  });
-})
-
-return (
-  <div className='App'>
-    <button> Generate Cat Fact</button>
-    <p> {catFact} </p>
-    </div>
-
-)
-
-
+  )
 
 }
 
@@ -53,6 +31,56 @@ export default App;
 
 
 
+
+
+
+
+
+
+
+
+///////////////////////////////// Using Axios api //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+// function App() {
+
+//   // this is how we get the api in js but there is another way and its with axios
+//   // fetch("https://catfact.ninja/fact").then((res) => res.json())
+//   // .then((data) => {
+//   //   console.log(data);
+//   // })
+
+//   const [catFact, setCatFact] = useState("");
+
+//   const fetchCatFact = () => {
+//       // Axios Api fetch
+//     Axios.get("https://catfact.ninja/fact").then((res) => {
+//       // console.log(res.data);
+//       setCatFact(res.data.fact);
+//     });
+//   }
+
+// // the useEffect helps it not be a infinite loop of facts
+//   useEffect(() => {
+//   // Axios Api fetch
+//     fetchCatFact();
+// }, []);
+
+// return (
+//   <div className='App'>
+//     <button onClick={fetchCatFact}> Generate Cat Fact</button>
+//     <p> {catFact} </p>
+//     </div>
+
+// );
+
+
+
+// }
+
+
+///////////////////////////////// End of using api ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// ////////////
 
 
 
