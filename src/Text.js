@@ -6,7 +6,12 @@ export const Text = () => {
 
     useEffect(() => {
         console.log("Component Mounted");
-    })
+
+        return () => {
+            console.log("Component Unmounted");
+        };
+        // by putting the array it only does it twice but if you pass text variable it will be everytime you insert a
+    }, [])
 
     return (
         <div>
@@ -19,4 +24,4 @@ export const Text = () => {
 }
 
 
-// stayed on 2:18:45
+// stayed on 2:18:45~
