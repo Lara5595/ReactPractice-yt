@@ -1,9 +1,9 @@
 import './App.css';
-import Axios  from 'axios';
+import Axios from "axios"
 // import { Text } from './Text';
 
 // react library
-// import { useState } from 'react';
+import { useState, useEffect} from 'react';
 
 
 // import { User } from "./User"
@@ -13,15 +13,28 @@ import Axios  from 'axios';
 
 
 function App() {
-  fetch("https://catfact.ninja/fact").then((res) => res.json())
-  .then((data) => {
-    console.log(data);
-  })
+
+  // this is how we get the api in js but there is another way and its with axios
+  // fetch("https://catfact.ninja/fact").then((res) => res.json())
+  // .then((data) => {
+  //   console.log(data);
+  // })
+
+  const [catFact, setCatFact] = useState("")
+
+// the useEffect helps it not be a infinite loop of facts
+  useEffect(() => {
+  // Axios Api fetch
+  Axios.get("https://catfact.ninja/fact").then((res) => {
+    // console.log(res.data);
+    setCatFact(res.data.fact)
+  });
+})
 
 return (
   <div className='App'>
     <button> Generate Cat Fact</button>
-    <p> </p>
+    <p> {catFact} </p>
     </div>
 
 )
