@@ -2,7 +2,7 @@ import "./App.css";
 import Axios from "axios";
 import { useEffect, useState } from "react";
 
-// https://excuser.herokuapp.com/v1/excuse/
+// https://excuser.herokuapp.com/v1/excuse/  api does not work anymore
 
 export const ExcuserApi = () => {
 const [generatedExcuse, setGeneratedExcuse] = useState("");
@@ -19,9 +19,11 @@ const fetchExcuse = (excuse) => {
 return (
 <div className="App">
     <h1>Generate An Excuse </h1>
-    <button> Party</button>
-    <button> Family</button>
-    <button> Office</button>
+    {/* We are passing the function fetchExcuse with the parameter excuse which changes when we put something */}
+    <button onClick={() => fetchExcuse("party")}> Party</button>
+    <button onClick={() => fetchExcuse("family")}> Family</button>
+    <button onClick={() => fetchExcuse("office")}> Office</button>
+
 
     <p>{generatedExcuse}</p>
 
