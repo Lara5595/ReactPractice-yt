@@ -4,7 +4,8 @@ import './App.css';
 
 // react library
 // import { useEffect, useState} from 'react';
-import { NameApi } from './NameApi';
+// import { NameApi } from './NameApi';
+import { ExcuserApi } from './ExcuserApi';
 
 // import { User } from "./User"
 // import Planets from './Planets';
@@ -15,8 +16,7 @@ import { NameApi } from './NameApi';
 function App() {
 
   return (
-    <NameApi />
-
+    <ExcuserApi />
   )
 
 }
