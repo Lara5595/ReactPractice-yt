@@ -5,24 +5,40 @@ import './App.css';
 // react library
 // import { useEffect, useState} from 'react';
 // import { NameApi } from './NameApi';
-import { ExcuserApi } from './ExcuserApi';
+// import { ExcuserApi } from './ExcuserApi';
 
 // import { User } from "./User"
 // import Planets from './Planets';
 // import {Planets} from './Planets'
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { Home } from './pages/Home';
+import { Menu } from './pages/Menu';
+import { Contact } from './pages/Contacts';
+
+
 
 
 
 function App() {
 
   return (
-    <ExcuserApi />
-  )
+    <Router>
+    <Routes>
+        {/* This is where you create the path in Route */}
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/contact" element={<Contact />} />
+
+
+
+    </Routes>
+</Router>
+
+    )
 
 }
 
 
-// Stayed on 2:57:11
 
 
 
