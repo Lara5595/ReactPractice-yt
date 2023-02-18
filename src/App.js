@@ -9,35 +9,34 @@ import './App.css';
 // import { User } from "./User"
 // import Planets from './Planets';
 // import {Planets} from './Planets'
-import {BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Home } from './pages/Home';
-import { Menu } from './pages/Menu';
+import { Profile } from './pages/Profile';
 import { Contacts } from './pages/Contacts';
+import { Navbar } from './Navbar';
+import { useState } from 'react';
 
 
 
 
 
 function App() {
+  // We created a useState so that we can pass username on profile and home
+  const [username, setUsername] = useState("DaveL");
 
   return (
+    <div className='App'>
     <Router>
-      <div>NAVBAR
-        <Link to="/"> Home</Link>
-        <Link to="/menu"> Menu</Link>
-        <Link to="/contact"> Contacts</Link>
-      </div>
+      <Navbar />
     <Routes>
-
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
+        <Route path="/" element={<Home username={username} />} />
+        <Route path="/profile" element={<Profile username={username} />} />
         <Route path="/contact" element={<Contacts />} />
         {/* The path with the asterisk is for errors you can make a page or just pass a h1 */}
         <Route path="*" element= {<h1>PAGE NOT FOUND</h1>} /> 
-
     </Routes>
 </Router>
-
+</div>
     )
 
 }
