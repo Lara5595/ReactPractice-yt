@@ -2,7 +2,6 @@ import './App.css';
 // import Axios from "axios";
 // import { Text } from './Text';
 
-// react library
 // import { useEffect, useState} from 'react';
 // import { NameApi } from './NameApi';
 // import { ExcuserApi } from './ExcuserApi';
@@ -13,7 +12,7 @@ import './App.css';
 import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Home } from './pages/Home';
 import { Menu } from './pages/Menu';
-import { Contact } from './pages/Contacts';
+import { Contacts } from './pages/Contacts';
 
 
 
@@ -24,12 +23,10 @@ function App() {
   return (
     <Router>
     <Routes>
-        {/* This is where you create the path in Route */}
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={<Menu />} />
-        <Route path="/contact" element={<Contact />} />
 
-
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/menu" element={<Menu />} />
+        <Route exact path="/contact" element={<Contacts />} />
 
     </Routes>
 </Router>
