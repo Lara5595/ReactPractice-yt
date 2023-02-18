@@ -9,7 +9,7 @@ import './App.css';
 // import { User } from "./User"
 // import Planets from './Planets';
 // import {Planets} from './Planets'
-import {BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import {BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import { Home } from './pages/Home';
 import { Menu } from './pages/Menu';
 import { Contacts } from './pages/Contacts';
@@ -22,11 +22,18 @@ function App() {
 
   return (
     <Router>
+      <div>NAVBAR
+        <Link to="/"> Home</Link>
+        <Link to="/menu"> Menu</Link>
+        <Link to="/contact"> Contacts</Link>
+      </div>
     <Routes>
 
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/menu" element={<Menu />} />
-        <Route exact path="/contact" element={<Contacts />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/contact" element={<Contacts />} />
+        {/* The path with the asterisk is for errors you can make a page or just pass a h1 */}
+        <Route path="*" element= {<h1>PAGE NOT FOUND</h1>} /> 
 
     </Routes>
 </Router>
