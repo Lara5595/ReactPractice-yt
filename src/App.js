@@ -14,10 +14,10 @@ import { Home } from './pages/Home';
 import { Profile } from './pages/Profile';
 import { Contacts } from './pages/Contacts';
 import { Navbar } from './Navbar';
-import { useState } from 'react';
+import { useState, createContext } from 'react';
 
-
-
+//  By using createContex we dont have to pass useranme and setusername to profile and home they have access by doing Appcontext.provider
+export const AppContext = createContext()
 
 
 function App() {
@@ -26,16 +26,18 @@ function App() {
 
   return (
     <div className='App'>
+      <AppContext.Provider value={{username, setUsername }}>
     <Router>
       <Navbar />
     <Routes>
-        <Route path="/" element={<Home username={username} />} />
-        <Route path="/profile" element={<Profile username={username} setUsername = {setUsername}/>} />
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/contact" element={<Contacts />} />
         {/* The path with the asterisk is for errors you can make a page or just pass a h1 */}
         <Route path="*" element= {<h1>PAGE NOT FOUND</h1>} /> 
     </Routes>
 </Router>
+</AppContext.Provider>
 </div>
     )
 

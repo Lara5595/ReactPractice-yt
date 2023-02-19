@@ -9,7 +9,7 @@ export const ChangeProfile = (props) => {
             }} />
             <button onClick={() => {
                 props.setUsername(newUsername)
-            }}>  {" "} Change Username</button>
+            }}> Change Username</button>
         </div>
     )
 }
