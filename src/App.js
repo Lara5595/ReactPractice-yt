@@ -30,7 +30,7 @@ function App() {
       <Navbar />
     <Routes>
         <Route path="/" element={<Home username={username} />} />
-        <Route path="/profile" element={<Profile username={username} />} />
+        <Route path="/profile" element={<Profile username={username} setUsername = {setUsername}/>} />
         <Route path="/contact" element={<Contacts />} />
         {/* The path with the asterisk is for errors you can make a page or just pass a h1 */}
         <Route path="*" element= {<h1>PAGE NOT FOUND</h1>} /> 
