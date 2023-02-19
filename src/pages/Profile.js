@@ -8,9 +8,8 @@ export const Profile = () => {
         const {username} = useContext(AppContext)
     return (
         <div>
-            {" "}
             PROFILE, user is : {username}
-            {/* <ChangeProfile setUsername={props.setUsername} /> */}
+            <ChangeProfile />
         </div>
     )
 };
