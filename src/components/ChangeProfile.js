@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 export const ChangeProfile = (props) => {
     const [newUsername, setNewUsername] = useState("")
     return (
