@@ -15,17 +15,22 @@ import { Profile } from './pages/Profile';
 import { Contacts } from './pages/Contacts';
 import { Navbar } from './Navbar';
 import { useState, createContext } from 'react';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 
 //  By using createContex we dont have to pass useranme and setusername to profile and home they have access by doing Appcontext.provider
 export const AppContext = createContext()
 
 
 function App() {
+  // we are using the QueryClient library we imported
+  const client = new QueryClient();
+
   // We created a useState so that we can pass username on profile and home
   const [username, setUsername] = useState("DaveL");
 
   return (
     <div className='App'>
+    <QueryClientProvider client={client}>
       <AppContext.Provider value={{username, setUsername }}>
     <Router>
       <Navbar />
@@ -38,6 +43,7 @@ function App() {
     </Routes>
 </Router>
 </AppContext.Provider>
+</QueryClientProvider>
 </div>
     )
 
