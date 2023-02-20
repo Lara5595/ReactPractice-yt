@@ -23,7 +23,12 @@ export const AppContext = createContext()
 
 function App() {
   // we are using the QueryClient library we imported
-  const client = new QueryClient();
+  // by adding defaultOptions we can pass queries so as refetchOnWindows which was whenever we go to another windown it refetches and we put false on it so it doesnt do that
+  const client = new QueryClient({defaultOptions:  {
+    queries: {
+      refetchOnWindowFocus: false,
+    }
+  }});
 
   // We created a useState so that we can pass username on profile and home
   const [username, setUsername] = useState("DaveL");
