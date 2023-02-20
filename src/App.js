@@ -16,6 +16,7 @@ import { Contacts } from './pages/Contacts';
 import { Navbar } from './Navbar';
 import { useState, createContext } from 'react';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
+import { Form } from "./components/Forms";
 
 //  By using createContex we dont have to pass useranme and setusername to profile and home they have access by doing Appcontext.provider
 export const AppContext = createContext()
@@ -49,6 +50,8 @@ function App() {
 </Router>
 </AppContext.Provider>
 </QueryClientProvider>
+<br></br>
+<Form/>
 </div>
     )
 
